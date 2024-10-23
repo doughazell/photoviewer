@@ -1,0 +1,7 @@
+{
+  "name": "photoviewer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
