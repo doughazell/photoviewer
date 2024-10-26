@@ -1,6 +1,10 @@
 // ---------------------------------------------------
 // 25/10/24 DH: WRAPPER AROUND 'PhotoviewerComponent'
 // ---------------------------------------------------
+// CALLED via: 'src/app/app-routing.module.ts':
+//   path: 'viewer/:mode',
+//   loadChildren: () => import('./tab1/viewer/viewer.module').then( m => m.ViewerPageModule)
+// ------------------------------------------------------------------------------------------
 
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';

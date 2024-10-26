@@ -21,7 +21,11 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
 
-  { path: 'photoviewer/:mode',
+  {
+    // 26/10/24 DH: Orig 'angular-photoviewer-app' path (which is illogical for [viewer/photoviewer] coupling)
+    //path: 'photoviewer/:mode',
+
+    path: 'viewer/:mode',
     loadChildren: () => import('./tab1/viewer/viewer.module').then( m => m.ViewerPageModule)
   }
 ];

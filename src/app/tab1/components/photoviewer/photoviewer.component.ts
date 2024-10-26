@@ -1,6 +1,5 @@
 import { Component, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
-import { PhotoViewer, Image, ViewerOptions,
-  capShowOptions, capShowResult} from '@capacitor-community/photoviewer';
+import { PhotoViewer, Image, ViewerOptions, capShowOptions, capShowResult} from '@capacitor-community/photoviewer';
 import { Capacitor } from '@capacitor/core';
 import { Toast } from '@capacitor/toast';
 
@@ -15,9 +14,18 @@ import { Toast } from '@capacitor/toast';
 })
 export class PhotoviewerComponent implements AfterViewInit {
 
+  // ViewerPage::template
+  // --------------------
+  // <app-photoviewer (pvExit)="handleExit($event)" [imageList]="imageList" [mode]="mode" [startFrom]="startFrom">
+
+  // https://angular.dev/api/core/Input 
+  // "Decorator that marks a class field as an input property...The input property is bound to a DOM property in the template. During change detection, 
+  //  Angular automatically updates the data property with the DOM property's value."
   @Input() imageList: Image[] = [];
   @Input() mode = '';
   @Input() startFrom = 0;
+
+  // https://angular.dev/api/core/Output
   @Output() pvExit: EventEmitter<any> = new EventEmitter();
 
   platform: string;
@@ -92,9 +100,11 @@ export class PhotoviewerComponent implements AfterViewInit {
       this.options.backgroundcolor = 'white';
       this.options.movieoptions = {mode: 'portrait', imagetime: 3};
       if (this.imageList != null && this.imageList.length > 0) {
+
         const result:any = await show(this.imageList, this.mode, this.startFrom, this.options);
         // base64 images call
         //ret = await show(base64List, options);
+        
         if(!result.result) {
             await showToast(result.message);
             this.pvExit.emit({result: result.result, message: result.message});

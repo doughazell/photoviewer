@@ -11,6 +11,7 @@ const routes: Routes = [
         path: 'tab1',
         loadChildren: () => import('../tab1/home/home.module').then( m => m.HomePageModule)
 
+        // Orig for Ionic generated tabs app
         //loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
 
