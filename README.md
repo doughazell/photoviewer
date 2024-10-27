@@ -49,6 +49,8 @@ photoviewer$ ionic cap sync
 photoviewer$ ionic cap open android
 ```
 
+**NOTE:** The repo **already contains** the necessary Android Studio Gradle cfg in 'android' directory (and this is just a **record of the steps** taken in creating it)
+
 ## Unrequired packages
 ['photoviewer' npm](https://www.npmjs.com/package/@capacitor-community/photoviewer) states, "The plugin works with the companion Stencil component jeep-photoviewer. It is mandatory to install it".  
 

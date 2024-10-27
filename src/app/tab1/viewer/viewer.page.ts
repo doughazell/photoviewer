@@ -32,12 +32,17 @@ export class ViewerPage  implements OnInit{
     
     // 25/10/24 DH: Port from Angular 15 to 18
     //this.mode = this.actRoute.snapshot.params.mode;
+    
+    // home.page.html - <ion-button routerLink='/viewer/one' ...>
     this.mode = this.actRoute.snapshot.params['mode'];
+    
     this.startFrom = 0;
 
     this.platform = Capacitor.getPlatform();
     console.log("ViewerPage.constructor() this.platform: ", this.platform);
   }
+
+  // 26/10/24 DH: Create the image library
   async ngOnInit() {
     this.imageList = [
       {url: 'https://i.ibb.co/wBYDxLq/beach.jpg', title: 'Beach Houses'},
