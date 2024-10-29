@@ -26,6 +26,19 @@ photoviewer$ ionic cap sync
 photoviewer$ ionic cap open android
 ```
 
+## Change App permissions
+If you want Photoviewer to display images outside of the App (ie "DCIM/Screenshots") then you need to change the Android App Permissions :
+```
+Android_Settings_Apps_<app name ie "photoviewer">_Permissions_Storage ON
+```
+This is in addition to the permissions allocated in AndroidManifest.xml :
+```
+android/app/src/main/AndroidManifest.xml
+
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
 ## Debug
 Angular 18 uses cache by default ([Angular 16: "Esbuild-based build system for development servers."](https://en.wikipedia.org/wiki/Angular_(web_framework)#Version_history)) so editing JS files in 'node_modules' DOES NOT CHANGE the version used by "$ ionic serve".  This can be changed with :
 
