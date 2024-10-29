@@ -27,7 +27,7 @@ photoviewer$ ionic cap open android
 ```
 
 ## Change App permissions
-If you want Photoviewer to display images outside of the App (ie "DCIM/Screenshots") then you need to change the Android App Permissions :
+If you want Photoviewer to display images outside of the App (eg "DCIM/Screenshots") then you need to change the Android App Permissions :
 ```
 Android_Settings_Apps_<app name ie "photoviewer">_Permissions_Storage ON
 ```
